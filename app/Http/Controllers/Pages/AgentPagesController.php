@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 class AgentPagesController extends Controller
 {
     public function index(){
-        return Inertia::render('Agent/Dashboard');
+        return Inertia::render('Agent/Dashboard',[
+            'auth' =>auth()->user()
+        ]);
     }
 }

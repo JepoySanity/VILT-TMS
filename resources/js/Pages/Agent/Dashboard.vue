@@ -1,13 +1,6 @@
-<template>
-  <h1>agent dashboard</h1>
-</template>
-
-<script>
-export default {
-
-}
+<script setup>
+import Navbar from "@/Components/TMS/Navbar.vue";
 </script>
-
-<style>
-
-</style>
+<template>
+  <component :is="Navbar"/>
+</template>

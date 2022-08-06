@@ -27,7 +27,7 @@ Route::get('/', function () {
 //Route for authenticated users
 Route::group(['middleware'=>'auth'],function(){
     //route for deciding where user will be redirected depending on their assigned role
-    Route::get('/redirectAuthenticatedUsers', [AuthRedirectAuthenticatedUsers::class, 'redirect_user']);
+    Route::get('/redirectAuthenticatedUsers', [AuthRedirectAuthenticatedUsers::class, 'redirect_user'])->name('to.dashboard');
     //routes for admin users
     Route::group(['middleware'=>'checkRole:admin'],function(){
         Route::get('/admin/dashboard',[AdminPagesController::class,'index'])->name('admin.dashboard');       
